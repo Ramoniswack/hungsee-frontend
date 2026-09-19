@@ -157,6 +157,9 @@ export default function Home() {
   const [activeFilter, setActiveFilter] = useState('All')
   const slideTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
+  const dragStartX = useRef<number | null>(null)
+  const isDragging = useRef(false)
+  const [isGrabbing, setIsGrabbing] = useState(false)
 
   const goToNextSlide = () => {
     setCurrentSlide(s => (s + 1) % SLIDES.length)
@@ -197,6 +200,30 @@ export default function Home() {
 
   const goToSlide = (i: number) => {
     setCurrentSlide(i)
+  }
+
+  // ── Drag / Swipe handlers ──
+  const SWIPE_THRESHOLD = 50
+
+  const handleDragStart = (clientX: number) => {
+    dragStartX.current = clientX
+    isDragging.current = false
+    setIsGrabbing(true)
+  }
+
+  const handleDragMove = (clientX: number) => {
+    if (dragStartX.current === null) return
+    if (Math.abs(clientX - dragStartX.current) > 5) isDragging.current = true
+  }
+
+  const handleDragEnd = (clientX: number) => {
+    setIsGrabbing(false)
+    if (dragStartX.current === null || !isDragging.current) { dragStartX.current = null; return }
+    const delta = dragStartX.current - clientX
+    if (delta > SWIPE_THRESHOLD) setCurrentSlide(s => (s + 1) % SLIDES.length)
+    else if (delta < -SWIPE_THRESHOLD) setCurrentSlide(s => (s - 1 + SLIDES.length) % SLIDES.length)
+    dragStartX.current = null
+    isDragging.current = false
   }
 
   const filteredPrograms = PROGRAMS.filter(p => activeFilter === 'All' || p.category === activeFilter)
@@ -336,7 +363,17 @@ export default function Home() {
       </nav>
 
       {/* ── HERO SLIDER ── */}
-      <section className="relative h-screen min-h-[700px] overflow-hidden bg-[#000000]">
+      <section
+        className="relative h-screen min-h-[700px] overflow-hidden bg-[#000000]"
+        style={{ cursor: isGrabbing ? 'grabbing' : 'grab', userSelect: 'none' }}
+        onMouseDown={e => handleDragStart(e.clientX)}
+        onMouseMove={e => { if (dragStartX.current !== null) handleDragMove(e.clientX) }}
+        onMouseUp={e => handleDragEnd(e.clientX)}
+        onMouseLeave={() => { if (dragStartX.current !== null) { setIsGrabbing(false); dragStartX.current = null } }}
+        onTouchStart={e => handleDragStart(e.touches[0].clientX)}
+        onTouchMove={e => handleDragMove(e.touches[0].clientX)}
+        onTouchEnd={e => handleDragEnd(e.changedTouches[0].clientX)}
+      >
         {SLIDES.map((slide, i) => (
           <div
             key={i}
@@ -352,13 +389,15 @@ export default function Home() {
                 src={slide.src}
                 muted
                 playsInline
-                className="absolute inset-0 w-full h-full object-cover"
+                draggable={false}
+                className="absolute inset-0 w-full h-full object-cover pointer-events-none"
               />
             ) : (
               <img
                 src={slide.src}
                 alt={slide.headline}
-                className="absolute inset-0 w-full h-full object-cover"
+                draggable={false}
+                className="absolute inset-0 w-full h-full object-cover pointer-events-none"
               />
             )}
             {/* Added 40% black overlay for text legibility on all backgrounds */}
