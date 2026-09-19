@@ -27,7 +27,7 @@ export default function MemberLayout({ children }: { children: React.ReactNode }
       <nav className="border-b border-white/5 bg-[#0b1120]/80 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-[1200px] mx-auto px-6 h-20 flex items-center justify-between">
           <Link href="/member/dashboard" className="flex items-center gap-3">
-            <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.4rem', fontWeight: 700, letterSpacing: '0.05em', color: '#ffffff' }}>HUNGSEE</span>
+            <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.4rem', fontWeight: 700, letterSpacing: '0.05em', color: 'var(--text-main, #ffffff)' }}>HUNGSEE</span>
             <span style={{ width: '1px', height: '24px', background: 'rgba(255,255,255,0.1)' }}></span>
             <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#93c5fd' }}>Member Portal</span>
           </Link>
@@ -40,7 +40,7 @@ export default function MemberLayout({ children }: { children: React.ReactNode }
                 <Link 
                   key={link.name} 
                   href={link.href}
-                  style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: active && (link.name === 'Overview' || link.name === 'Classes') ? '#ffffff' : '#94a3b8' }}
+                  style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: active && (link.name === 'Overview' || link.name === 'Classes') ? 'var(--text-main, #ffffff)' : 'var(--text-muted-light, #94a3b8)' }}
                   className="hover:text-white transition-colors"
                 >
                   {link.name}

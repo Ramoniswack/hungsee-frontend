@@ -28,10 +28,10 @@ export default function MemberClassesPage() {
       {/* HEADER */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-white/5 pb-8">
         <div>
-          <h1 style={{ fontFamily: "'Oswald', sans-serif", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase', lineHeight: 1 }}>
+          <h1 style={{ fontFamily: "'Oswald', sans-serif", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 700, color: 'var(--text-main, #ffffff)', textTransform: 'uppercase', lineHeight: 1 }}>
             Book a Class
           </h1>
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '1rem', color: '#cbd5e1', marginTop: '0.5rem' }}>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '1rem', color: 'var(--text-muted, #cbd5e1)', marginTop: '0.5rem' }}>
             Find your next session and reserve your place.
           </p>
         </div>
@@ -53,8 +53,8 @@ export default function MemberClassesPage() {
                   background: activeDate === d.date ? 'rgba(147, 197, 253, 0.05)' : 'rgba(15, 23, 42, 0.5)',
                 }}
               >
-                <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.1em', color: activeDate === d.date ? '#93c5fd' : '#64748b' }}>{d.day}</span>
-                <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.5rem', fontWeight: 700, color: activeDate === d.date ? '#ffffff' : '#cbd5e1', lineHeight: 1.2 }}>{d.date}</span>
+                <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.1em', color: activeDate === d.date ? '#93c5fd' : 'var(--text-muted-lighter, #64748b)' }}>{d.day}</span>
+                <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.5rem', fontWeight: 700, color: activeDate === d.date ? 'var(--text-main, #ffffff)' : 'var(--text-muted, #cbd5e1)', lineHeight: 1.2 }}>{d.date}</span>
               </button>
             ))}
           </div>
@@ -68,9 +68,9 @@ export default function MemberClassesPage() {
                 style={{
                   fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase',
                   padding: '0.6rem 1.2rem',
-                  border: '1px solid ' + (activeFilter === cat ? '#ffffff' : 'rgba(255,255,255,0.1)'),
-                  background: activeFilter === cat ? '#ffffff' : 'rgba(15, 23, 42, 0.5)',
-                  color: activeFilter === cat ? '#0f172a' : '#cbd5e1',
+                  border: '1px solid ' + (activeFilter === cat ? 'var(--text-main, #ffffff)' : 'rgba(255,255,255,0.1)'),
+                  background: activeFilter === cat ? 'var(--text-main, #ffffff)' : 'rgba(15, 23, 42, 0.5)',
+                  color: activeFilter === cat ? '#0f172a' : 'var(--text-muted, #cbd5e1)',
                   transition: 'all 0.2s',
                   borderRadius: '2rem'
                 }}
@@ -88,12 +88,12 @@ export default function MemberClassesPage() {
             <div key={i} className="grid grid-cols-1 md:grid-cols-12 gap-6 p-8 items-center border border-white/5 bg-[#0f172a] hover:border-white/20 transition-all rounded-xl">
               <div className="md:col-span-4 flex flex-col gap-2">
                 <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.15em', color: '#93c5fd' }}>{cls.time}</span>
-                <h3 style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.8rem', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase', lineHeight: 1.1 }}>{cls.name}</h3>
+                <h3 style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.8rem', fontWeight: 700, color: 'var(--text-main, #ffffff)', textTransform: 'uppercase', lineHeight: 1.1 }}>{cls.name}</h3>
               </div>
               
               <div className="md:col-span-4">
-                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.9rem', color: '#cbd5e1' }}>with {cls.trainerId.split('-').map(n => n.charAt(0).toUpperCase() + n.slice(1)).join(' ')}</p>
-                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.8rem', color: '#64748b', marginTop: '0.2rem' }}>{cls.duration}</p>
+                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.9rem', color: 'var(--text-muted, #cbd5e1)' }}>with {cls.trainerId.split('-').map(n => n.charAt(0).toUpperCase() + n.slice(1)).join(' ')}</p>
+                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.8rem', color: 'var(--text-muted-lighter, #64748b)', marginTop: '0.2rem' }}>{cls.duration}</p>
               </div>
               
               <div className="md:col-span-4 flex flex-col sm:flex-row items-center justify-start md:justify-end gap-4 md:gap-6 mt-4 md:mt-0">
@@ -103,7 +103,7 @@ export default function MemberClassesPage() {
                     style={{ 
                       fontFamily: "'Inter', sans-serif",
                       background: cls.slots === 0 ? 'rgba(255,255,255,0.05)' : 'rgba(147,197,253,0.1)',
-                      color: cls.slots === 0 ? '#64748b' : '#93c5fd',
+                      color: cls.slots === 0 ? 'var(--text-muted-lighter, #64748b)' : '#93c5fd',
                       border: '1px solid ' + (cls.slots === 0 ? 'rgba(255,255,255,0.1)' : 'rgba(147,197,253,0.3)')
                     }}
                   >
@@ -134,7 +134,7 @@ export default function MemberClassesPage() {
             </div>
           )) : (
             <div className="p-16 text-center border border-white/5 bg-[#0f172a] rounded-xl">
-              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '1.1rem', color: '#64748b' }}>No classes scheduled for this category on the selected date.</p>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '1.1rem', color: 'var(--text-muted-lighter, #64748b)' }}>No classes scheduled for this category on the selected date.</p>
             </div>
           )}
         </div>
