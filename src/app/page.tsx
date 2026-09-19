@@ -720,49 +720,52 @@ export default function Home() {
 
           <div className="space-y-4">
             {SCHEDULE.map((cls, i) => (
-              <div key={i} className="flex flex-col md:flex-row items-start md:items-center justify-between p-6 md:p-8 bg-[#0f172a] border border-white/5 hover:border-[#1e3a8a] transition-all group">
-                <div className="flex flex-col md:flex-row md:items-center gap-6 w-full md:w-auto mb-6 md:mb-0">
-                  <div style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.5rem', fontWeight: 700, color: '#93c5fd', minWidth: '100px' }}>{cls.time}</div>
-                  <div>
-                    <h4 style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.5rem', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.2rem' }}>{cls.name}</h4>
-                    <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.85rem', color: '#94a3b8' }}>with <span className="text-white">{cls.trainer}</span> • {cls.intensity} Intensity</p>
+                <div key={i} className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center p-6 md:p-8 rounded-xl border border-white/5 bg-[#0f172a] hover:border-[#93c5fd]/30 hover:bg-[#1e3a8a]/10 transition-all group" style={{ backgroundColor: 'var(--bg-surface, #0f172a)' }}>
+                  <div className="md:col-span-4 flex flex-col gap-2">
+                    <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.15em', color: '#93c5fd' }}>{cls.time}</span>
+                    <h3 style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.8rem', fontWeight: 700, color: 'var(--text-main, #ffffff)', textTransform: 'uppercase', lineHeight: 1.1 }}>{cls.name}</h3>
+                  </div>
+                  
+                  <div className="md:col-span-4">
+                    <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.9rem', color: 'var(--text-muted, #cbd5e1)' }}>with {cls.trainer}</p>
+                    <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.8rem', color: 'var(--text-muted-lighter, #64748b)', marginTop: '0.2rem' }}>{cls.intensity} Intensity</p>
+                  </div>
+                  
+                  <div className="md:col-span-4 flex flex-col sm:flex-row items-center justify-start md:justify-end gap-4 md:gap-6 mt-4 md:mt-0">
+                    <div className="w-full md:w-auto">
+                      <span 
+                        className="inline-flex justify-center items-center w-full md:w-auto px-4 py-3 md:py-1.5 rounded text-xs font-bold tracking-widest uppercase"
+                        style={{ 
+                          fontFamily: "'Inter', sans-serif",
+                          background: cls.slots === 0 ? 'rgba(255,255,255,0.05)' : 'rgba(147,197,253,0.1)',
+                          color: cls.slots === 0 ? 'var(--text-muted-lighter, #64748b)' : '#93c5fd',
+                          border: '1px solid ' + (cls.slots === 0 ? 'var(--border-inactive, rgba(255,255,255,0.1))' : 'rgba(147,197,253,0.3)')
+                        }}
+                      >
+                        {cls.slots === 0 ? 'Full' : cls.slots + ' Slots Left'}
+                      </span>
+                    </div>
+                    {cls.slots > 0 ? (
+                      <Link href="/login" className="w-full md:w-auto text-center">
+                        <button 
+                          className="w-full md:w-auto px-6 py-3 md:py-3 border border-white/20 text-white rounded text-xs font-bold tracking-widest uppercase hover:bg-white hover:text-[#0f172a] transition-all flex items-center justify-center gap-2"
+                          style={{ fontFamily: "'Inter', sans-serif" }}
+                        >
+                          Book Class <span className="text-lg leading-none">→</span>
+                        </button>
+                      </Link>
+                    ) : (
+                      <button 
+                        disabled
+                        className="w-full md:w-auto px-6 py-3 border border-white/5 text-white/30 rounded text-xs font-bold tracking-widest uppercase cursor-not-allowed flex items-center justify-center gap-2"
+                        style={{ fontFamily: "'Inter', sans-serif" }}
+                      >
+                        Waitlist Full
+                      </button>
+                    )}
                   </div>
                 </div>
-                
-                <div className="flex items-center justify-between md:justify-end w-full md:w-auto gap-6">
-                  <div className="text-right">
-                    <span 
-                      className={`inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase ${cls.slots === 0 ? 'bg-gray-800 text-gray-400 border border-gray-700' : 'bg-amber-500/10 text-amber-500 border border-amber-500/20'}`}
-                      style={{ fontFamily: "'Inter', sans-serif" }}
-                    >
-                      {cls.slots === 0 ? 'Full' : `${cls.slots} Slots Left`}
-                    </span>
-                  </div>
-                  <Link 
-                    href={cls.slots === 0 ? '#' : '/login'}
-                    style={{ 
-                      fontFamily: "'Inter', sans-serif", 
-                      fontSize: '0.8rem', 
-                      fontWeight: 700,
-                      letterSpacing: '0.1em', 
-                      textTransform: 'uppercase', 
-                      color: cls.slots === 0 ? '#64748b' : '#0f172a', 
-                      background: cls.slots === 0 ? '#1e293b' : '#ffffff', 
-                      padding: '1rem 2.5rem', 
-                      border: 'none', 
-                      cursor: cls.slots === 0 ? 'not-allowed' : 'pointer',
-                      transition: 'all 0.3s',
-                      textDecoration: 'none',
-                      display: 'inline-block',
-                      textAlign: 'center'
-                    }}
-                    className={cls.slots > 0 ? "hover:bg-[#93c5fd]" : "pointer-events-none"}
-                  >
-                    {cls.slots === 0 ? 'Waitlist' : 'Reserve'}
-                  </Link>
-                </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
       </section>
