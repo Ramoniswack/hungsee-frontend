@@ -1,0 +1,67 @@
+      {/* Custom Calendar Modal */}
+      {showCalendar && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" onClick={() => setShowCalendar(false)}>
+          <div className="bg-[#0f172a] border border-white/10 p-6 max-w-2xl w-full shadow-2xl relative" style={{ backgroundColor: 'var(--bg-surface, #0f172a)' }} onClick={e => e.stopPropagation()}>
+            <div className="flex justify-between items-center mb-6">
+              <h3 style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.2rem', fontWeight: 500, color: 'var(--text-main, #ffffff)', textTransform: 'uppercase' }}>Select Date Range</h3>
+              <button className="text-gray-400 hover:text-white" onClick={() => setShowCalendar(false)}>
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+              </button>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
+              {/* Left Calendar */}
+              <div>
+                <div className="flex justify-between items-center mb-4">
+                  <button className="text-gray-400 hover:text-white">&lt;</button>
+                  <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #ffffff)' }}>August 2024</span>
+                  <button className="text-gray-400 hover:text-white">&gt;</button>
+                </div>
+                <div className="grid grid-cols-7 gap-1 text-center mb-2">
+                  {['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].map(d => (
+                    <div key={d} className="text-[10px] font-bold text-gray-500">{d}</div>
+                  ))}
+                </div>
+                <div className="grid grid-cols-7 gap-1 text-center">
+                  {Array.from({length: 31}).map((_, i) => (
+                    <button key={i} className={p-2 text-xs rounded hover:bg-white/10 transition-colors \}>
+                      {i + 1}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Right Calendar */}
+              <div>
+                <div className="flex justify-between items-center mb-4">
+                  <button className="text-gray-400 hover:text-white">&lt;</button>
+                  <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #ffffff)' }}>September 2024</span>
+                  <button className="text-gray-400 hover:text-white">&gt;</button>
+                </div>
+                <div className="grid grid-cols-7 gap-1 text-center mb-2">
+                  {['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].map(d => (
+                    <div key={d} className="text-[10px] font-bold text-gray-500">{d}</div>
+                  ))}
+                </div>
+                <div className="grid grid-cols-7 gap-1 text-center">
+                  {Array.from({length: 30}).map((_, i) => (
+                    <button key={i} className={p-2 text-xs rounded hover:bg-white/10 transition-colors \}>
+                      {i + 1}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+            
+            <div className="flex justify-between items-center pt-4 border-t border-white/10">
+              <span className="text-sm font-bold text-[#93c5fd]">Aug 16 - Sep 06</span>
+              <button 
+                onClick={() => { setActiveDate('Aug 16 - Sep 06'); setShowCalendar(false); }}
+                className="bg-[#93c5fd] hover:bg-white text-[#0f172a] text-xs font-bold tracking-widest uppercase py-2 px-6 transition-colors"
+              >
+                Apply Range
+              </button>
+            </div>
+          </div>
+        </div>
+      )}

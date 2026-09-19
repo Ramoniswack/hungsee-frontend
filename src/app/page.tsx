@@ -1,5 +1,6 @@
 "use client"
 import { useState, useEffect, useRef } from 'react'
+import Link from 'next/link'
 
 const NAV_LINKS = ['Home', 'Arena', 'Classes', 'Trainers', 'Memberships', 'Contact']
 
@@ -11,6 +12,7 @@ const SLIDES = [
     headline: 'TRANSFORM YOUR BODY',
     sub: 'State-of-the-art facilities & expert training',
     cta: 'JOIN NOW',
+      href: '/login',
   },
   {
     type: 'video',
@@ -19,6 +21,7 @@ const SLIDES = [
     headline: 'STRENGTH & CONDITIONING',
     sub: 'Achieve your peak performance',
     cta: 'BOOK A CLASS',
+      href: '/classes',
   },
   {
     type: 'video',
@@ -27,6 +30,7 @@ const SLIDES = [
     headline: 'GROUP CLASSES',
     sub: 'High energy, motivating environment to push your limits',
     cta: 'VIEW SCHEDULE',
+      href: '/classes',
   },
   {
     type: 'video',
@@ -35,6 +39,7 @@ const SLIDES = [
     headline: 'ADVANCED TRAINING',
     sub: 'Personalized programs tailored for you',
     cta: 'MEET THE EXPERTS',
+      href: '/login',
   },
   {
     type: 'video',
@@ -43,6 +48,7 @@ const SLIDES = [
     headline: 'YOGA & FLEXIBILITY',
     sub: 'Holistic wellness and recovery',
     cta: 'EXPLORE PROGRAMS',
+      href: '/classes',
   },
 ]
 
@@ -372,39 +378,22 @@ export default function Home() {
               }}
             >
               <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.9rem', fontWeight: 600, letterSpacing: '0.25em', color: '#93c5fd', textTransform: 'uppercase', marginBottom: '1.5rem' }}>{slide.eyebrow}</p>
-              <h1 style={{ fontFamily: "'Oswald', sans-serif", fontSize: 'clamp(4rem, 10vw, 8rem)', fontWeight: 700, lineHeight: 1, letterSpacing: '0.02em', color: '#ffffff', textTransform: 'uppercase', marginBottom: '1.5rem' }}>{slide.headline}</h1>
+              <h1 style={{ fontFamily: "'Oswald', sans-serif", fontSize: 'clamp(2.5rem, 10vw, 8rem)', fontWeight: 700, lineHeight: 1, letterSpacing: '0.02em', color: '#ffffff', textTransform: 'uppercase', marginBottom: '1.5rem' }}>{slide.headline}</h1>
               <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '1.2rem', fontWeight: 400, color: '#cbd5e1', marginBottom: '3.5rem', maxWidth: '500px', lineHeight: 1.6 }}>{slide.sub}</p>
               
-              <div className="flex flex-col sm:flex-row gap-6 pointer-events-auto">
-                <a
-                  href="#"
-                  style={{ 
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '1rem',
-                    fontFamily: "'Inter', sans-serif", 
-                    fontSize: '0.85rem', 
-                    fontWeight: 700,
-                    letterSpacing: '0.2em', 
-                    textTransform: 'uppercase', 
-                    color: '#0f172a', 
-                    background: '#ffffff', 
-                    padding: '1.4rem 3rem', 
-                    transition: 'all 0.3s', 
-                    textDecoration: 'none',
-                  }}
-                  onMouseEnter={e => { const el = e.currentTarget; el.style.background = '#93c5fd'; }}
-                  onMouseLeave={e => { const el = e.currentTarget; el.style.background = '#ffffff'; }}
+              <div className="flex flex-col sm:flex-row items-start gap-6 pointer-events-auto w-full max-w-[280px] sm:max-w-none">
+                <Link
+                  href={slide.href}
+                  className="w-full sm:w-[280px] py-4 sm:py-5 flex items-center justify-center gap-4 text-xs sm:text-sm font-bold tracking-[0.2em] uppercase text-[#0f172a] bg-white transition-colors duration-300 hover:bg-[#93c5fd]"
                 >
                   {slide.cta} <span className="text-xl leading-none">→</span>
-                </a>
+                </Link>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="absolute bottom-12 right-12 z-30 flex gap-4 pointer-events-auto items-center">
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 md:translate-x-0 md:bottom-16 md:left-auto md:right-16 z-30 flex items-center gap-4 sm:gap-6 pointer-events-auto">
           <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.7rem', letterSpacing: '0.2em', color: '#cbd5e1' }}>0{currentSlide + 1}</span>
           <div className="flex gap-2">
             {SLIDES.map((_, i) => (
@@ -445,7 +434,7 @@ export default function Home() {
              <div className="w-12 h-1 bg-[#93c5fd]"></div>
              <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.25em', color: '#93c5fd', textTransform: 'uppercase' }}>The Arena</span>
           </div>
-          <h2 style={{ fontFamily: "'Oswald', sans-serif", fontSize: 'clamp(3.5rem, 6vw, 6rem)', fontWeight: 700, lineHeight: 1.1, textTransform: 'uppercase', marginBottom: '2.5rem', color: '#ffffff' }}>
+          <h2 style={{ fontFamily: "'Oswald', sans-serif", fontSize: 'clamp(2.5rem, 6vw, 6rem)', fontWeight: 700, lineHeight: 1.1, textTransform: 'uppercase', marginBottom: '2.5rem', color: '#ffffff' }}>
             REDEFINE YOUR LIMITS
           </h2>
           <div className="space-y-6 mb-16 mx-auto max-w-[800px]">
@@ -481,7 +470,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
             <div>
               <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.9rem', fontWeight: 600, letterSpacing: '0.25em', textTransform: 'uppercase', color: '#93c5fd', marginBottom: '1rem' }}>The Environment</p>
-              <h2 style={{ fontFamily: "'Oswald', sans-serif", fontSize: 'clamp(3rem, 5vw, 4rem)', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase', lineHeight: 1 }}>Premium Facilities</h2>
+              <h2 style={{ fontFamily: "'Oswald', sans-serif", fontSize: 'clamp(2.2rem, 5vw, 4rem)', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase', lineHeight: 1 }}>Premium Facilities</h2>
             </div>
           </div>
 
@@ -503,7 +492,7 @@ export default function Home() {
       <section id="programs" className="py-32 px-8 bg-[#0f172a] relative border-t border-white/5">
         <div className="max-w-[1400px] mx-auto">
           <div className="mb-12 text-center">
-            <h2 style={{ fontFamily: "'Oswald', sans-serif", fontSize: 'clamp(3rem, 6vw, 4.5rem)', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase', lineHeight: 1, marginBottom: '2rem' }}>Signature Programs</h2>
+            <h2 style={{ fontFamily: "'Oswald', sans-serif", fontSize: 'clamp(2.2rem, 6vw, 4.5rem)', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase', lineHeight: 1, marginBottom: '2rem' }}>Signature Programs</h2>
           </div>
 
           {/* Category Filters */}
@@ -538,7 +527,7 @@ export default function Home() {
                 className="group relative aspect-[3/4] overflow-hidden cursor-pointer bg-black animate-reveal-up opacity-0"
                 style={{ animationDelay: `${i * 100}ms` }}
               >
-                <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 filter grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-90" />
+                <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 filter md:grayscale brightness-75 md:brightness-50 group-hover:grayscale-0 group-hover:brightness-90" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#000000]/40 to-transparent opacity-90 transition-opacity duration-500" />
                 <div className="absolute inset-0 p-8 flex flex-col justify-end">
                   <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#93c5fd', marginBottom: '0.5rem' }}>{item.label}</p>
@@ -561,7 +550,7 @@ export default function Home() {
       <section className="py-32 px-8 bg-[#0b1120] border-t border-white/5">
         <div className="max-w-[1400px] mx-auto">
           <div className="text-center mb-20">
-             <h2 style={{ fontFamily: "'Oswald', sans-serif", fontSize: 'clamp(3rem, 6vw, 4.5rem)', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase' }}>
+             <h2 style={{ fontFamily: "'Oswald', sans-serif", fontSize: 'clamp(2.2rem, 6vw, 4.5rem)', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase' }}>
                Expert Coaching Staff
              </h2>
              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '1.1rem', color: '#94a3b8', marginTop: '1rem', maxWidth: '600px' }} className="mx-auto">
@@ -573,7 +562,7 @@ export default function Home() {
             {TRAINERS.map((inst, i) => (
               <div key={i} className="flex flex-col group text-center cursor-pointer bg-[#131b2e] border border-white/10 pb-8 hover:border-white/30 transition-all rounded-sm overflow-hidden">
                 <div className="relative aspect-[3/4] overflow-hidden mb-8 bg-[#0b1120]">
-                  <img src={inst.image} alt={inst.name} className="w-full h-full object-cover filter grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
+                  <img src={inst.image} alt={inst.name} className="w-full h-full object-cover filter md:grayscale opacity-100 md:opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
                 </div>
                 <div>
                   <h3 style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.8rem', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase', marginBottom: '0.2rem' }}>{inst.name}</h3>
@@ -683,9 +672,9 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-8">
             <div>
               <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.9rem', fontWeight: 600, letterSpacing: '0.25em', textTransform: 'uppercase', color: '#1e3a8a', marginBottom: '1rem' }}>Live Capacity</p>
-              <h2 style={{ fontFamily: "'Oswald', sans-serif", fontSize: 'clamp(3rem, 5vw, 4rem)', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase', lineHeight: 1 }}>Today's Classes</h2>
+              <h2 style={{ fontFamily: "'Oswald', sans-serif", fontSize: 'clamp(2.2rem, 5vw, 4rem)', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase', lineHeight: 1 }}>Today's Classes</h2>
             </div>
-            <a href="#" style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#ffffff', borderBottom: '1px solid #ffffff', paddingBottom: '0.2rem' }}>View Full Calendar →</a>
+            <Link href="/classes" style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#ffffff', borderBottom: '1px solid #ffffff', paddingBottom: '0.2rem' }}>View Full Calendar →</Link>
           </div>
 
           <div className="space-y-4">
@@ -708,8 +697,8 @@ export default function Home() {
                       {cls.slots === 0 ? 'Full' : `${cls.slots} Slots Left`}
                     </span>
                   </div>
-                  <button 
-                    disabled={cls.slots === 0}
+                  <Link 
+                    href={cls.slots === 0 ? '#' : '/login'}
                     style={{ 
                       fontFamily: "'Inter', sans-serif", 
                       fontSize: '0.8rem', 
@@ -721,12 +710,15 @@ export default function Home() {
                       padding: '1rem 2.5rem', 
                       border: 'none', 
                       cursor: cls.slots === 0 ? 'not-allowed' : 'pointer',
-                      transition: 'all 0.3s'
+                      transition: 'all 0.3s',
+                      textDecoration: 'none',
+                      display: 'inline-block',
+                      textAlign: 'center'
                     }}
-                    className={cls.slots > 0 ? "hover:bg-[#93c5fd]" : ""}
+                    className={cls.slots > 0 ? "hover:bg-[#93c5fd]" : "pointer-events-none"}
                   >
                     {cls.slots === 0 ? 'Waitlist' : 'Reserve'}
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -738,7 +730,7 @@ export default function Home() {
       <section className="relative py-32 px-8 bg-[#0b1120] border-t border-white/5">
         <div className="max-w-[1400px] mx-auto">
           <div className="text-center mb-24">
-            <h2 style={{ fontFamily: "'Oswald', sans-serif", fontSize: 'clamp(3.5rem, 6vw, 5rem)', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase' }}>Join The Arena</h2>
+            <h2 style={{ fontFamily: "'Oswald', sans-serif", fontSize: 'clamp(2.5rem, 6vw, 5rem)', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase' }}>Join The Arena</h2>
             <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '1.1rem', color: '#94a3b8', marginTop: '1rem' }}>No hidden fees. Just transparent, elite access.</p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
@@ -802,8 +794,8 @@ export default function Home() {
             <form className="space-y-4 max-w-md" onSubmit={e => e.preventDefault()}>
               <input type="text" placeholder="Full Name" className="w-full bg-[#0b1120] border border-white/30 p-4 text-white placeholder-white/50 focus:outline-none focus:border-[#93c5fd] transition-colors shadow-inner" />
               <input type="tel" placeholder="Phone Number" className="w-full bg-[#0b1120] border border-white/30 p-4 text-white placeholder-white/50 focus:outline-none focus:border-[#93c5fd] transition-colors shadow-inner" />
-              <select className="w-full bg-[#0b1120] border border-white/30 p-4 text-white/70 focus:outline-none focus:border-[#93c5fd] appearance-none transition-colors shadow-inner">
-                <option value="" disabled selected>Primary Goal</option>
+              <select defaultValue="" className="w-full bg-[#0b1120] border border-white/30 p-4 text-white/70 focus:outline-none focus:border-[#93c5fd] appearance-none transition-colors shadow-inner">
+                <option value="" disabled>Primary Goal</option>
                 <option value="strength">Strength & Muscle</option>
                 <option value="weightloss">Weight Loss</option>
                 <option value="endurance">Endurance & Cardio</option>
