@@ -355,7 +355,7 @@ export default function Home() {
             ) : (
               <img
                 src={slide.src}
-                alt={slide.title}
+                alt={slide.headline}
                 className="absolute inset-0 w-full h-full object-cover"
               />
             )}

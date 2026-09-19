@@ -46,7 +46,7 @@ function ClassesContent() {
           <h1 style={{ fontFamily: "'Oswald', sans-serif", fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 700, lineHeight: 1.1, textTransform: 'uppercase', marginBottom: '1.5rem', color: '#ffffff' }}>
             Class Schedule
           </h1>
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '1.1rem', color: '#cbd5e1', maxWidth: '600px', mx: 'auto' }}>
+          <p className="mx-auto" style={{ fontFamily: "'Inter', sans-serif", fontSize: '1.1rem', color: '#cbd5e1', maxWidth: '600px' }}>
             Find your next session and reserve your place.
           </p>
         </div>

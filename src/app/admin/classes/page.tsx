@@ -6,7 +6,7 @@ export default function AdminClasses() {
   const [classes, setClasses] = useState(CLASSES)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [newClass, setNewClass] = useState({
-    name: '', programId: PROGRAMS[0].id, trainerId: TRAINERS[0].id, date: '2024-09-21', time: '06:00 AM', duration: '60 Min', capacity: 20, slots: 20
+    name: '', programId: PROGRAMS[0].id, trainerId: TRAINERS[0].id, date: '2024-09-21', time: '06:00 AM', duration: '60 Min', capacity: 20, slots: 20, intensity: 'High', status: 'Scheduled'
   })
 
   const handleAddClass = (e: React.FormEvent) => {
