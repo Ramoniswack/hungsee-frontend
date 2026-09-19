@@ -187,7 +187,7 @@ export default function AdminDashboard() {
                           <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted, #64748b)' }}>Capacity</span>
                           <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.8rem', color: 'var(--text-main, #ffffff)' }}>{cls.capacity - cls.slots} / {cls.capacity}</span>
                         </div>
-                        <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden"><div className="h-full bg-blue-400" style={{ width: ${fillPercentage}% }}></div></div>
+                        <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden"><div className="h-full bg-blue-400" style={{ width: `${fillPercentage}%` }}></div></div>
                       </div>
                     </div>
                   )
