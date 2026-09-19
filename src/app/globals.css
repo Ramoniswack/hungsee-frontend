@@ -182,3 +182,30 @@ body {
   --border-inactive: rgba(15, 23, 42, 0.1) !important;
 }
 
+
+/* Fix Monthly Challenge banner in light mode */
+.theme-light .bg-gradient-to-r.from-\[\#0f172a\].to-\[\#1e3a8a\]\/20 {
+  background-image: linear-gradient(to right, #dbeafe, #eff6ff) !important;
+}
+
+
+/* Safer override for Monthly Challenge banner */
+.theme-light .from-\[\#0f172a\] {
+  --tw-gradient-from: #dbeafe var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgb(219 234 254 / 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+.theme-light .to-\[\#1e3a8a\]\/20 {
+  --tw-gradient-to: rgba(239, 246, 255, 0.8) var(--tw-gradient-to-position) !important;
+}
+
+
+.theme-light .hover\:bg-\[\#1e3a8a\]:hover {
+  background-color: #dbeafe !important;
+}
+
+
+.theme-light {
+  --text-accent: #1d4ed8 !important;
+}
+

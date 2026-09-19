@@ -44,7 +44,7 @@ export default function MemberDashboard() {
           <div className="w-px h-12 bg-white/10 mx-4 md:mx-0"></div>
           <div className="text-center md:text-right">
             <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-muted-lighter, #64748b)' }}>Total Points</p>
-            <p style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.8rem', fontWeight: 700, color: '#93c5fd' }} className="leading-none mt-1">2,450</p>
+            <p style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.8rem', fontWeight: 700, color: 'var(--text-accent, #93c5fd)' }} className="leading-none mt-1">2,450</p>
           </div>
         </div>
       </header>
@@ -58,7 +58,7 @@ export default function MemberDashboard() {
           <div className="bg-gradient-to-r from-[#0f172a] to-[#1e3a8a]/20 border border-[#93c5fd]/20 p-6 rounded-lg relative overflow-hidden flex items-center justify-between">
             <div className="absolute top-0 right-0 w-32 h-32 bg-[#93c5fd] opacity-5 rounded-full blur-2xl transform translate-x-1/2 -translate-y-1/2"></div>
             <div>
-              <h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#93c5fd' }}>Monthly Challenge</h3>
+              <h3 style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-accent, #93c5fd)' }}>Monthly Challenge</h3>
               <p style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.2rem', color: 'var(--text-main, #ffffff)', marginTop: '0.2rem' }}>Complete 10 Classes this month</p>
             </div>
             <div className="flex flex-col items-end">
@@ -77,12 +77,12 @@ export default function MemberDashboard() {
                 <h3 style={{ fontFamily: "'Oswald', sans-serif", fontSize: '2.5rem', fontWeight: 700, color: 'var(--text-main, #ffffff)', textTransform: 'uppercase', lineHeight: 1.1 }}>{nextClass.name}</h3>
                 <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '1rem', color: 'var(--text-muted, #cbd5e1)', marginTop: '0.5rem' }}>with {nextTrainer?.name}</p>
                 <div className="flex items-center gap-4 mt-4">
-                  <span className="flex items-center gap-2" style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.8rem', fontWeight: 600, color: '#93c5fd' }}>
+                  <span className="flex items-center gap-2" style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-accent, #93c5fd)' }}>
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                     {nextClass.date}
                   </span>
                   <span style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'var(--text-muted-lighter, #64748b)' }}></span>
-                  <span className="flex items-center gap-2" style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.8rem', fontWeight: 600, color: '#93c5fd' }}>
+                  <span className="flex items-center gap-2" style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-accent, #93c5fd)' }}>
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     {nextClass.time}
                   </span>
@@ -120,7 +120,7 @@ export default function MemberDashboard() {
                     <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.8rem', color: 'var(--text-muted-lighter, #64748b)' }}>08:00 AM - 60 Min</p>
                   </div>
                 </div>
-                <Link href="/book/vinyasa-1?status=confirmed" style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', color: '#93c5fd', fontWeight: 600, textTransform: 'uppercase' }} className="px-4 py-2 hover:bg-white/5 transition-colors">Manage</Link>
+                <Link href="/book/vinyasa-1?status=confirmed" style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', color: 'var(--text-accent, #93c5fd)', fontWeight: 600, textTransform: 'uppercase' }} className="px-4 py-2 hover:bg-white/5 transition-colors">Manage</Link>
               </div>
             </div>
           </div>
