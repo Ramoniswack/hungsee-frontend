@@ -1,10 +1,19 @@
 ﻿import re
 
-with open('src/app/member/book/[id]/page.tsx', 'r', encoding='utf-8') as f:
+with open('src/app/admin/dashboard/page.tsx', 'r', encoding='utf-8') as f:
     text = f.read()
 
-# Replace hardcoded button color
-text = text.replace("color: '#0f172a'", "color: 'var(--text-inverted, #0f172a)'")
+text = re.sub(
+    r'<td className="p-4">\s*<div className="flex items-center gap-3">\s*<div className="w-8 h-8 rounded-full',
+    r'<td className="p-4 hidden md:table-cell">\n                              <div className="flex items-center gap-3">\n                                <div className="w-8 h-8 rounded-full',
+    text
+)
 
-with open('src/app/member/book/[id]/page.tsx', 'w', encoding='utf-8') as f:
+text = re.sub(
+    r'<td className="p-4">\s*<div className="flex items-center gap-3 w-32">',
+    r'<td className="p-4 hidden sm:table-cell">\n                              <div className="flex items-center gap-3 w-32">',
+    text
+)
+
+with open('src/app/admin/dashboard/page.tsx', 'w', encoding='utf-8') as f:
     f.write(text)

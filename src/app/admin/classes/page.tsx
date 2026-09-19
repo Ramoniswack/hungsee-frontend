@@ -34,13 +34,13 @@ export default function AdminClasses() {
 
       <div className="bg-[#0f172a] border border-white/5 overflow-hidden">
         <div className="overflow-x-auto no-scrollbar pb-4 md:pb-0">
-          <table className="w-full text-left border-collapse whitespace-nowrap md:min-w-[800px]">
+          <table className="mobile-cards-table w-full text-left border-collapse whitespace-nowrap md:min-w-[800px]">
             <thead>
               <tr className="border-b border-white/5 bg-[#0b1120]">
                 <th className="p-4" style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted, #64748b)' }}>Date & Time</th>
                 <th className="p-4" style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted, #64748b)' }}>Class Name</th>
-                <th className="p-4 hidden md:table-cell" style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted, #64748b)' }}>Trainer</th>
-                <th className="p-4 hidden sm:table-cell" style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted, #64748b)' }}>Bookings</th>
+                <th className="p-4" style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted, #64748b)' }}>Trainer</th>
+                <th className="p-4" style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted, #64748b)' }}>Bookings</th>
                 <th className="p-4 text-right" style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted, #64748b)' }}>Actions</th>
               </tr>
             </thead>
@@ -50,21 +50,23 @@ export default function AdminClasses() {
                 const trainer = TRAINERS.find(t => t.id === cls.trainerId)
                 return (
                   <tr key={cls.id || i} className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                    <td className="p-4">
-                      <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #ffffff)' }}>{cls.date}</p>
+                    <td className="p-4" data-label="Date & Time">
+                        <div className="flex flex-col items-end">
+                        <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-main, #ffffff)' }}>{cls.date}</p>
                       <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.8rem', color: 'var(--text-muted, #64748b)' }}>{cls.time}</p>
-                    </td>
-                    <td className="p-4">
-                      <p style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.1rem', fontWeight: 500, color: 'var(--text-main, #ffffff)', textTransform: 'uppercase' }}>{cls.name}</p>
+                    </div></td>
+                    <td className="p-4" data-label="Class Name">
+                        <div className="flex flex-col items-end"><p style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.1rem', fontWeight: 500, color: 'var(--text-main, #ffffff)', textTransform: 'uppercase' }}>{cls.name}</p>
                       <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', color: '#93c5fd', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{program?.category}</p>
+                    </div>
+                      </td>
+                    <td className="p-4" data-label="Trainer">
+                          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.9rem', color: 'var(--text-muted-light, #cbd5e1)' }}>{trainer?.name}</p>
                     </td>
-                    <td className="p-4 hidden md:table-cell">
-                        <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.9rem', color: 'var(--text-muted-light, #cbd5e1)' }}>{trainer?.name}</p>
+                    <td className="p-4" data-label="Bookings">
+                        <span className="px-3 py-1 bg-white/5 rounded-full text-xs font-bold text-white tracking-widest">{cls.capacity - cls.slots} / {cls.capacity}</span>
                     </td>
-                    <td className="p-4 hidden sm:table-cell">
-                      <span className="px-3 py-1 bg-white/5 rounded-full text-xs font-bold text-white tracking-widest">{cls.capacity - cls.slots} / {cls.capacity}</span>
-                    </td>
-                    <td className="p-4 text-right">
+                    <td className="p-4 text-right" data-label="Actions">
                       <button className="text-gray-400 hover:text-white transition-colors mr-3 text-sm">Edit</button>
                       <button 
                         onClick={() => setClasses(classes.filter(c => c.id !== cls.id))}
