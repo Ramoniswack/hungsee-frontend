@@ -49,11 +49,11 @@ export default function MemberClassesPage() {
                 onClick={() => setActiveDate(d.date)}
                 className="flex flex-col items-center justify-center min-w-[70px] h-[80px] border transition-all rounded-lg"
                 style={{
-                  borderColor: activeDate === d.date ? '#93c5fd' : 'rgba(255,255,255,0.1)',
-                  background: activeDate === d.date ? 'rgba(147, 197, 253, 0.05)' : 'rgba(15, 23, 42, 0.5)',
+                  borderColor: activeDate === d.date ? 'var(--border-active, #93c5fd)' : 'var(--border-inactive, rgba(255,255,255,0.1))',
+                  background: activeDate === d.date ? 'var(--bg-active, rgba(147, 197, 253, 0.05))' : 'var(--bg-inactive, rgba(15, 23, 42, 0.5))',
                 }}
               >
-                <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.1em', color: activeDate === d.date ? '#93c5fd' : 'var(--text-muted-lighter, #64748b)' }}>{d.day}</span>
+                <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.1em', color: activeDate === d.date ? 'var(--text-main, #93c5fd)' : 'var(--text-muted-lighter, #64748b)' }}>{d.day}</span>
                 <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.5rem', fontWeight: 700, color: activeDate === d.date ? 'var(--text-main, #ffffff)' : 'var(--text-muted, #cbd5e1)', lineHeight: 1.2 }}>{d.date}</span>
               </button>
             ))}
@@ -68,9 +68,9 @@ export default function MemberClassesPage() {
                 style={{
                   fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase',
                   padding: '0.6rem 1.2rem',
-                  border: '1px solid ' + (activeFilter === cat ? 'var(--text-main, #ffffff)' : 'rgba(255,255,255,0.1)'),
-                  background: activeFilter === cat ? 'var(--text-main, #ffffff)' : 'rgba(15, 23, 42, 0.5)',
-                  color: activeFilter === cat ? '#0f172a' : 'var(--text-muted, #cbd5e1)',
+                  border: '1px solid ' + (activeFilter === cat ? 'var(--text-main, #ffffff)' : 'var(--border-inactive, rgba(255,255,255,0.1))'),
+                  background: activeFilter === cat ? 'var(--text-main, #ffffff)' : 'var(--bg-inactive, rgba(15, 23, 42, 0.5))',
+                  color: activeFilter === cat ? 'var(--text-inverted, #0f172a)' : 'var(--text-muted, #cbd5e1)',
                   transition: 'all 0.2s',
                   borderRadius: '2rem'
                 }}
@@ -104,7 +104,7 @@ export default function MemberClassesPage() {
                       fontFamily: "'Inter', sans-serif",
                       background: cls.slots === 0 ? 'rgba(255,255,255,0.05)' : 'rgba(147,197,253,0.1)',
                       color: cls.slots === 0 ? 'var(--text-muted-lighter, #64748b)' : '#93c5fd',
-                      border: '1px solid ' + (cls.slots === 0 ? 'rgba(255,255,255,0.1)' : 'rgba(147,197,253,0.3)')
+                      border: '1px solid ' + (cls.slots === 0 ? 'var(--border-inactive, rgba(255,255,255,0.1))' : 'rgba(147,197,253,0.3)')
                     }}
                   >
                     {cls.slots === 0 ? 'Full' : cls.slots + ' Slots Left'}

@@ -164,3 +164,21 @@ body {
   --border-color: rgba(15, 23, 42, 0.2) !important;
 }
 
+
+.theme-light .from-\[\#1e3a8a\]\/50 {
+  --tw-gradient-from: rgba(147, 197, 253, 0.5) var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgba(147, 197, 253, 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+.theme-light .to-\[\#2563eb\]\/20 {
+  --tw-gradient-to: rgba(59, 130, 246, 0.2) var(--tw-gradient-to-position) !important;
+}
+
+
+.theme-light {
+  --bg-active: #dbeafe !important;
+  --bg-inactive: rgba(15, 23, 42, 0.05) !important;
+  --border-active: #2563eb !important;
+  --border-inactive: rgba(15, 23, 42, 0.1) !important;
+}
+

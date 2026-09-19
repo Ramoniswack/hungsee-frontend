@@ -58,7 +58,7 @@ function BookingContent() {
           <Link href={isConfirmed ? '/member/dashboard' : ('/member/book/' + cls.id + '?status=confirmed')} className="block w-full">
             <button 
               className="w-full transition-colors hover:bg-gray-200 rounded"
-              style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.9rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#0f172a', background: 'var(--text-main, #ffffff)', padding: '1.2rem', border: 'none', cursor: 'pointer' }}
+              style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.9rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-inverted, #0f172a)', background: 'var(--text-main, #ffffff)', padding: '1.2rem', border: 'none', cursor: 'pointer' }}
             >
               {isConfirmed ? 'Back to Dashboard' : 'Confirm Booking'}
             </button>
