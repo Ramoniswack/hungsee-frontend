@@ -292,7 +292,7 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-            <Link href="/register"
+            <a href="/register"
               style={{ 
                 fontFamily: "'Inter', sans-serif", 
                 fontSize: '0.75rem', 
@@ -330,7 +330,7 @@ export default function Home() {
               {NAV_LINKS.map(l => (
                 <a key={l} href="#" onClick={() => setMenuOpen(false)} style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.5rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#ffffff' }}>{l}</a>
               ))}
-              <Link href="/register" onClick={() => setMenuOpen(false)} style={{ fontFamily: "'Inter', sans-serif", fontSize: '1rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#0f172a', background: '#ffffff', padding: '1rem', textAlign: 'center', marginTop: '1rem', textDecoration: 'none' }}>Join Now</Link>
+              <a href="/register" onClick={() => setMenuOpen(false)} style={{ fontFamily: "'Inter', sans-serif", fontSize: '1rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#0f172a', background: '#ffffff', padding: '1rem', textAlign: 'center', marginTop: '1rem', textDecoration: 'none' }}>Join Now</a>
             </div>
         )}
       </nav>
