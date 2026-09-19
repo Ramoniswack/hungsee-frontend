@@ -1,9 +1,12 @@
 ﻿import re
 
-with open('src/app/member/layout.tsx', 'r', encoding='utf-8') as f:
+with open('src/app/page.tsx', 'r', encoding='utf-8') as f:
     text = f.read()
 
-text = text.replace("'1px solid rgba(255,255,255,0.2)'", "'1px solid var(--border-color, rgba(255,255,255,0.2))'")
+# Fix desktop button
+text = text.replace("Join Now\n            </Link>", "Join Now\n            </a>")
+# Fix mobile button
+text = text.replace("Join Now</Link>", "Join Now</a>")
 
-with open('src/app/member/layout.tsx', 'w', encoding='utf-8') as f:
+with open('src/app/page.tsx', 'w', encoding='utf-8') as f:
     f.write(text)
