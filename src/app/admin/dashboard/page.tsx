@@ -156,13 +156,13 @@ export default function AdminDashboard() {
             </div>
             <div className="bg-[#0f172a] border border-white/5 overflow-hidden" style={{ backgroundColor: 'var(--bg-surface, #0f172a)' }}>
               <div className="overflow-x-auto no-scrollbar pb-4 md:pb-0">
-                <table className="w-full text-left border-collapse whitespace-nowrap min-w-[800px]">
+                <table className="w-full text-left border-collapse whitespace-nowrap md:min-w-[800px]">
                   <thead>
                     <tr className="border-b border-white/5 bg-[#0b1120]" style={{ backgroundColor: 'var(--bg-base, #0b1120)' }}>
                       <th className="p-4" style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted, #64748b)' }}>Time</th>
                       <th className="p-4" style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted, #64748b)' }}>Class</th>
-                      <th className="p-4" style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted, #64748b)' }}>Trainer</th>
-                      <th className="p-4" style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted, #64748b)' }}>Capacity</th>
+                      <th className="p-4 hidden md:table-cell" style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted, #64748b)' }}>Trainer</th>
+                      <th className="p-4 hidden sm:table-cell" style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted, #64748b)' }}>Capacity</th>
                       <th className="p-4 text-right" style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-muted, #64748b)' }}>Status</th>
                     </tr>
                   </thead>
@@ -176,14 +176,14 @@ export default function AdminDashboard() {
                           <td className="p-4">
                             <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-main, #ffffff)' }}>{cls.name}</p>
                           </td>
-                          <td className="p-4">
-                            <div className="flex items-center gap-3">
-                              <div className="w-8 h-8 rounded-full bg-gray-700 overflow-hidden"><img src={trainer?.image} alt={trainer?.name} className="w-full h-full object-cover" /></div>
+                          <td className="p-4 hidden md:table-cell">
+                              <div className="flex items-center gap-3">
+                                <div className="w-8 h-8 rounded-full bg-gray-700 overflow-hidden"><img src={trainer?.image} alt={trainer?.name} className="w-full h-full object-cover" /></div>
                               <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.85rem', color: 'var(--text-muted-light, #cbd5e1)' }}>{trainer?.name}</span>
                             </div>
                           </td>
-                          <td className="p-4">
-                            <div className="flex items-center gap-3 w-32">
+                          <td className="p-4 hidden sm:table-cell">
+                              <div className="flex items-center gap-3 w-32">
                               <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.8rem', color: 'var(--text-muted-light, #cbd5e1)' }}>{cls.capacity - cls.slots}/{cls.capacity}</span>
                               <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden"><div className="h-full bg-blue-400" style={{ width: `${fillPercentage}%` }}></div></div>
                             </div>
