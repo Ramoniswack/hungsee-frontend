@@ -79,7 +79,7 @@ export default function Navbar() {
           </ul>
           {!isLoggedIn ? (
             <Link
-              href="/classes"
+              href="/register"
               style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#0f172a', background: '#ffffff', padding: '0.8rem 1.8rem', border: 'none', cursor: 'pointer', transition: 'all 0.3s' }}
               className="hover:bg-[#93c5fd] rounded"
             >
@@ -116,7 +116,7 @@ export default function Navbar() {
           ))}
           {!isLoggedIn && (
             <Link
-              href="/classes"
+              href="/register"
               onClick={() => setMenuOpen(false)}
               style={{ fontFamily: "'Inter', sans-serif", fontSize: '1rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#0f172a', background: '#ffffff', padding: '1rem', textAlign: 'center', marginTop: '1rem' }}
             >
