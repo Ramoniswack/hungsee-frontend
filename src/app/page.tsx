@@ -292,7 +292,7 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-            <button
+            <Link href="/register"
               style={{ 
                 fontFamily: "'Inter', sans-serif", 
                 fontSize: '0.75rem', 
@@ -304,13 +304,14 @@ export default function Home() {
                 padding: '0.8rem 1.8rem', 
                 border: 'none', 
                 cursor: 'pointer',
-                transition: 'all 0.3s'
+                transition: 'all 0.3s',
+                textDecoration: 'none'
               }}
               onMouseEnter={e => { e.currentTarget.style.background = '#93c5fd' }}
               onMouseLeave={e => { e.currentTarget.style.background = '#ffffff' }}
             >
               Join Now
-            </button>
+            </Link>
           </div>
 
           <button
@@ -326,10 +327,11 @@ export default function Home() {
 
         {menuOpen && (
           <div className="lg:hidden absolute top-0 left-0 w-full bg-[#0f172a] pt-24 pb-12 px-8 flex flex-col gap-6 border-b border-white/10">
-            {NAV_LINKS.map(l => (
-              <a key={l} href="#" onClick={() => setMenuOpen(false)} style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.5rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#ffffff' }}>{l}</a>
-            ))}
-          </div>
+              {NAV_LINKS.map(l => (
+                <a key={l} href="#" onClick={() => setMenuOpen(false)} style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.5rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#ffffff' }}>{l}</a>
+              ))}
+              <Link href="/register" onClick={() => setMenuOpen(false)} style={{ fontFamily: "'Inter', sans-serif", fontSize: '1rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#0f172a', background: '#ffffff', padding: '1rem', textAlign: 'center', marginTop: '1rem', textDecoration: 'none' }}>Join Now</Link>
+            </div>
         )}
       </nav>
 
