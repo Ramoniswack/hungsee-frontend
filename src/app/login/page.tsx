@@ -8,7 +8,7 @@ function LoginForm() {
   const searchParams = useSearchParams()
   const redirect = searchParams.get('redirect')
   
-  const [email, setEmail] = useState('user@hungsee.com')
+  const [email, setEmail] = useState('user@monstergym.com')
   const [password, setPassword] = useState('password123')
   const [showPassword, setShowPassword] = useState(false)
 
@@ -49,7 +49,7 @@ function LoginForm() {
             className="w-full bg-[#0f172a] border border-white/20 p-4 text-white placeholder-gray-500 focus:outline-none focus:border-[#93c5fd] transition-colors"
             style={{ fontFamily: "'Inter', sans-serif" }}
           />
-          <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-1">Tip: Use admin@hungsee.com for admin portal</p>
+          <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-1">Tip: Use admin@monstergym.com for admin portal</p>
         </div>
         
         <div className="space-y-2">
@@ -110,7 +110,7 @@ export default function LoginPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
         <div className="relative z-10 flex flex-col justify-end p-16 pb-24">
           <Link href="/" className="mb-auto">
-            <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: '2rem', fontWeight: 700, letterSpacing: '0.05em', color: '#ffffff' }}>HUNGSEE</span>
+            <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: '2rem', fontWeight: 700, letterSpacing: '0.05em', color: '#ffffff' }}>MONSTER GYM</span>
           </Link>
           <h2 style={{ fontFamily: "'Oswald', sans-serif", fontSize: '4rem', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase', lineHeight: 1 }}>
             Train Harder.<br/>Go Further.
@@ -122,7 +122,7 @@ export default function LoginPage() {
       <div className="flex-1 flex flex-col justify-center px-8 py-20 lg:p-24 relative overflow-y-auto">
         <div className="lg:hidden absolute top-8 left-8">
           <Link href="/">
-            <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.5rem', fontWeight: 700, letterSpacing: '0.05em', color: '#ffffff' }}>HUNGSEE</span>
+            <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.5rem', fontWeight: 700, letterSpacing: '0.05em', color: '#ffffff' }}>MONSTER GYM</span>
           </Link>
         </div>
         

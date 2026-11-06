@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hungsee Fitness Arena",
+  title: "Monster Gym",
   description: "Empowering your fitness journey with aesthetic environments and standard equipments.",
 };
 

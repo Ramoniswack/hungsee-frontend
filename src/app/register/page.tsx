@@ -7,13 +7,13 @@ export default function RegisterPage() {
       <div className="hidden lg:flex lg:w-1/2 relative bg-black">
         <img 
           src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=1200&h=1600&fit=crop" 
-          alt="Fitness Arena" 
+          alt="Monster Gym" 
           className="absolute inset-0 w-full h-full object-cover filter grayscale opacity-60"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
         <div className="relative z-10 flex flex-col justify-end p-16 pb-24">
           <Link href="/" className="mb-auto">
-            <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: '2rem', fontWeight: 700, letterSpacing: '0.05em', color: '#ffffff' }}>HUNGSEE</span>
+            <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: '2rem', fontWeight: 700, letterSpacing: '0.05em', color: '#ffffff' }}>MONSTER GYM</span>
           </Link>
           <h2 style={{ fontFamily: "'Oswald', sans-serif", fontSize: '4rem', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase', lineHeight: 1 }}>
             Join The<br/>Arena.
@@ -25,7 +25,7 @@ export default function RegisterPage() {
       <div className="flex-1 flex flex-col justify-center px-8 py-20 lg:p-24 relative overflow-y-auto">
         <div className="lg:hidden absolute top-8 left-8">
           <Link href="/">
-            <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.5rem', fontWeight: 700, letterSpacing: '0.05em', color: '#ffffff' }}>HUNGSEE</span>
+            <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.5rem', fontWeight: 700, letterSpacing: '0.05em', color: '#ffffff' }}>MONSTER GYM</span>
           </Link>
         </div>
         

@@ -36,7 +36,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       {/* Mobile Header */}
       <div className="md:hidden flex items-center justify-between p-4 bg-[#0f172a] border-b border-white/5 sticky top-0 z-30">
         <Link href="/">
-          <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-main, #ffffff)' }}>HUNGSEE</span>
+          <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-main, #ffffff)' }}>MONSTER GYM</span>
         </Link>
         <div className="flex gap-3">
           <button onClick={() => setIsLightMode(!isLightMode)} className="w-8 h-8 flex items-center justify-center rounded bg-white/5 border border-white/10 text-gray-400">
@@ -67,13 +67,13 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             {!isCollapsed && (
               <div className="flex flex-col">
                 <Link href="/" className="block mb-0.5">
-                  <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.5rem', fontWeight: 700, letterSpacing: '0.05em', color: 'var(--text-main, #ffffff)' }}>HUNGSEE</span>
+                  <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.5rem', fontWeight: 700, letterSpacing: '0.05em', color: 'var(--text-main, #ffffff)' }}>MONSTER GYM</span>
                 </Link>
                 <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.6rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: '#93c5fd' }}>Admin</span>
               </div>
             )}
             {isCollapsed && (
-              <Link href="/" className="mx-auto block text-[#93c5fd] font-bold text-xl">H</Link>
+              <Link href="/" className="mx-auto block text-[#93c5fd] font-bold text-xl">M</Link>
             )}
             
             {/* Collapse Toggle */}

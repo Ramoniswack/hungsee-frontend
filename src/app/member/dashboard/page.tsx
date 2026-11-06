@@ -231,7 +231,7 @@ export default function MemberDashboard() {
               {/* Real QR Code Demo */}
               <div className="w-48 h-48 flex items-center justify-center relative overflow-hidden">
                 <img 
-                  src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=HUNGSEE-CHECKIN-${nextClass.id}-ALEX`}
+                  src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=MONSTER-CHECKIN-${nextClass.id}-ALEX`}
                   alt="Check-in QR Code"
                   className="w-full h-full object-contain"
                 />

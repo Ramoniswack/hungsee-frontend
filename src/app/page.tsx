@@ -145,7 +145,7 @@ const COMMUNITY_REVIEWS = [
 
 const TESTIMONIALS = [
   { text: "The energy in this arena is unmatched. The aesthetic environment and the standard of equipment pushed me further than I ever thought possible.", author: "SARAH JENKINS", role: "ELITE MEMBER" },
-  { text: "I've trained in facilities all over the world. Hungsee brings a standard to fitness that you simply cannot find anywhere else.", author: "MICHAEL T.", role: "PRO ATHLETE" },
+  { text: "I've trained in facilities all over the world. Monster Gym brings a standard to fitness that you simply cannot find anywhere else.", author: "MICHAEL T.", role: "PRO ATHLETE" },
   { text: "More than a gym. It's a community pushing each other. The coaches actually care about your progression and longevity.", author: "DAVID CHEN", role: "POWERLIFTER" }
 ]
 
@@ -291,8 +291,8 @@ export default function Home() {
 
           {/* Centered Text Logo */}
           <a href="#" className="flex flex-col items-center leading-none z-50 lg:absolute lg:left-1/2 lg:-translate-x-1/2">
-            <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: '2.2rem', fontWeight: 700, letterSpacing: '0.05em', color: '#ffffff' }}>HUNGSEE</span>
-            <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.65rem', letterSpacing: '0.3em', color: '#93c5fd', textTransform: 'uppercase', marginTop: '0.2rem' }}>Fitness Arena</span>
+            <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: '2.2rem', fontWeight: 700, letterSpacing: '0.05em', color: '#ffffff' }}>MONSTER</span>
+            <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.65rem', letterSpacing: '0.3em', color: '#93c5fd', textTransform: 'uppercase', marginTop: '0.2rem' }}>Gym</span>
           </a>
 
           {/* Right Links + CTA */}
@@ -480,7 +480,7 @@ export default function Home() {
           </h2>
           <div className="space-y-6 mb-16 mx-auto max-w-[800px]">
             <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '1.25rem', lineHeight: 1.8, color: '#f8fafc', fontWeight: 300 }}>
-              Hungsee Fitness Arena was born out of a desire to create a training environment that refuses to compromise on quality or aesthetic. 
+              Monster Gym was born out of a desire to create a training environment that refuses to compromise on quality or aesthetic. 
             </p>
             <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '1rem', lineHeight: 1.8, color: '#cbd5e1' }}>
               We combine architectural aesthetics with elite standard equipments and professional educators. This isn't just a gym—it's an arena where you conquer yourself.
@@ -880,8 +880,8 @@ export default function Home() {
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div>
             <div className="mb-6">
-              <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: '2.5rem', fontWeight: 700, letterSpacing: '0.05em', color: '#ffffff', display: 'block', lineHeight: 1 }}>HUNGSEE</span>
-              <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.7rem', letterSpacing: '0.25em', color: '#93c5fd', textTransform: 'uppercase' }}>Fitness Arena</span>
+              <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: '2.5rem', fontWeight: 700, letterSpacing: '0.05em', color: '#ffffff', display: 'block', lineHeight: 1 }}>MONSTER</span>
+              <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.7rem', letterSpacing: '0.25em', color: '#93c5fd', textTransform: 'uppercase' }}>Gym</span>
             </div>
             <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.95rem', lineHeight: 1.8, color: '#64748b', maxWidth: '280px' }}>Empowering your fitness journey with aesthetic environments and standard equipments.</p>
           </div>
@@ -935,7 +935,7 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 border-t border-white/5 pt-8 max-w-[1400px] mx-auto">
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', letterSpacing: '0.15em', color: '#475569', textTransform: 'uppercase' }}>© 2026 Hungsee Fitness Arena. All Rights Reserved.</p>
+          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', letterSpacing: '0.15em', color: '#475569', textTransform: 'uppercase' }}>© 2026 Monster Gym. All Rights Reserved.</p>
         </div>
       </footer>
     </div>

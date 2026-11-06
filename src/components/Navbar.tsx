@@ -58,8 +58,8 @@ export default function Navbar() {
         </div>
         
         <Link href="/" onClick={() => setMenuOpen(false)} className="flex flex-col items-center leading-none z-50 lg:absolute lg:left-1/2 lg:-translate-x-1/2">
-          <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: '2.2rem', fontWeight: 700, letterSpacing: '0.05em', color: '#ffffff' }}>HUNGSEE</span>
-          <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.65rem', letterSpacing: '0.3em', color: '#93c5fd', textTransform: 'uppercase', marginTop: '0.2rem' }}>Fitness Arena</span>
+          <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: '2.2rem', fontWeight: 700, letterSpacing: '0.05em', color: '#ffffff' }}>MONSTER</span>
+          <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.65rem', letterSpacing: '0.3em', color: '#93c5fd', textTransform: 'uppercase', marginTop: '0.2rem' }}>Gym</span>
         </Link>
         
         <div className="hidden lg:flex items-center justify-end flex-1 gap-10">
