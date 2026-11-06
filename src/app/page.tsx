@@ -327,16 +327,16 @@ export default function Home() {
                 letterSpacing: '0.15em', 
                 textTransform: 'uppercase', 
                 color: '#0f172a', 
-                background: '#facc15', 
+                background: '#ffffff', 
                 padding: '0.8rem 1.8rem', 
                 border: 'none', 
                 cursor: 'pointer',
                 transition: 'all 0.3s',
                 textDecoration: 'none'
               }}
-              className="hover:bg-[#fbbf24] shadow-md shadow-yellow-500/20 rounded font-bold"
-              onMouseEnter={e => { e.currentTarget.style.background = '#fbbf24' }}
-              onMouseLeave={e => { e.currentTarget.style.background = '#facc15' }}
+              className="hover:bg-[#93c5fd] rounded"
+              onMouseEnter={e => { e.currentTarget.style.background = '#93c5fd' }}
+              onMouseLeave={e => { e.currentTarget.style.background = '#ffffff' }}
             >
               Join Now
             </Link>
@@ -358,7 +358,7 @@ export default function Home() {
               {NAV_LINKS.map(l => (
                 <a key={l} href="#" onClick={() => setMenuOpen(false)} style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.5rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#ffffff' }}>{l}</a>
               ))}
-              <Link href="/register" onClick={() => setMenuOpen(false)} style={{ fontFamily: "'Inter', sans-serif", fontSize: '1rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#0f172a', background: '#facc15', padding: '1rem', textAlign: 'center', marginTop: '1rem', textDecoration: 'none' }} className="rounded shadow-md shadow-yellow-500/20 font-bold">Join Now</Link>
+              <Link href="/register" onClick={() => setMenuOpen(false)} style={{ fontFamily: "'Inter', sans-serif", fontSize: '1rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#0f172a', background: '#ffffff', padding: '1rem', textAlign: 'center', marginTop: '1rem', textDecoration: 'none' }}>Join Now</Link>
             </div>
         )}
       </nav>
@@ -419,7 +419,7 @@ export default function Home() {
                 pointerEvents: i === currentSlide ? 'auto' : 'none' 
               }}
             >
-              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.9rem', fontWeight: 700, letterSpacing: '0.25em', color: '#facc15', textTransform: 'uppercase', marginBottom: '1.5rem' }}>{slide.eyebrow}</p>
+              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.9rem', fontWeight: 600, letterSpacing: '0.25em', color: '#93c5fd', textTransform: 'uppercase', marginBottom: '1.5rem' }}>{slide.eyebrow}</p>
               <h1 style={{ fontFamily: "'Oswald', sans-serif", fontSize: 'clamp(2.5rem, 10vw, 8rem)', fontWeight: 700, lineHeight: 1, letterSpacing: '0.02em', color: '#ffffff', textTransform: 'uppercase', marginBottom: '1.5rem' }}>{slide.headline}</h1>
               <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '1.2rem', fontWeight: 400, color: '#cbd5e1', marginBottom: '3.5rem', maxWidth: '500px', lineHeight: 1.6 }}>{slide.sub}</p>
               
@@ -473,8 +473,8 @@ export default function Home() {
         
         <div className="max-w-[1000px] mx-auto text-center relative z-10">
           <div className="mb-8 flex flex-col items-center gap-4">
-             <div className="w-12 h-1 bg-[#facc15]"></div>
-             <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.25em', color: '#facc15', textTransform: 'uppercase' }}>The Arena</span>
+             <div className="w-12 h-1 bg-[#93c5fd]"></div>
+             <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.25em', color: '#93c5fd', textTransform: 'uppercase' }}>The Arena</span>
           </div>
           <h2 style={{ fontFamily: "'Oswald', sans-serif", fontSize: 'clamp(2.5rem, 6vw, 6rem)', fontWeight: 700, lineHeight: 1.1, textTransform: 'uppercase', marginBottom: '2.5rem', color: '#ffffff' }}>
             REDEFINE YOUR LIMITS
@@ -781,7 +781,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
             {MEMBERSHIPS.map((plan, i) => (
               <div key={i} className={`p-10 md:p-14 relative group ${i === 1 ? 'bg-gradient-to-b from-[#1e3a8a] to-[#0b1120] border border-[#1e3a8a] lg:scale-105 z-10 shadow-2xl' : 'bg-[#0b1120] border border-white/10 hover:border-white/30'} transition-all duration-500`}>
-                {i === 1 && <div className="absolute top-0 right-8 bg-[#facc15] text-[#0f172a] text-xs font-bold tracking-widest px-3 py-1 uppercase translate-y-[-50%] shadow-lg shadow-yellow-500/20">Most Popular</div>}
+                {i === 1 && <div className="absolute top-0 right-8 bg-white text-[#0f172a] text-xs font-bold tracking-widest px-3 py-1 uppercase translate-y-[-50%]">Most Popular</div>}
                 
                 <h3 style={{ fontFamily: "'Oswald', sans-serif", fontSize: '2rem', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase', marginBottom: '1rem' }}>{plan.title}</h3>
                 <div className="flex items-baseline gap-2 mb-8 border-b border-white/10 pb-8">
@@ -792,7 +792,7 @@ export default function Home() {
                 <ul className="space-y-4 mb-12">
                   {plan.features.map((feat, j) => (
                     <li key={j} style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.95rem', color: '#cbd5e1', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                      <span className="text-[#facc15] font-bold">✓</span> {feat}
+                      <span className="text-[#93c5fd] font-bold">✓</span> {feat}
                     </li>
                   ))}
                 </ul>
@@ -805,16 +805,16 @@ export default function Home() {
                     letterSpacing: '0.15em', 
                     textTransform: 'uppercase', 
                     color: i === 1 ? '#0f172a' : '#ffffff', 
-                    background: i === 1 ? '#facc15' : 'transparent', 
-                    border: `1px solid ${i === 1 ? '#facc15' : 'rgba(255,255,255,0.2)'}`, 
+                    background: i === 1 ? '#ffffff' : 'transparent', 
+                    border: `1px solid ${i === 1 ? '#ffffff' : 'rgba(255,255,255,0.2)'}`, 
                     padding: '1.2rem 0', 
                     textAlign: 'center',
                     cursor: 'pointer', 
                     transition: 'all 0.3s', 
                     width: '100%' 
                   }}
-                  onMouseEnter={e => { e.currentTarget.style.background = i === 1 ? '#fbbf24' : '#ffffff'; e.currentTarget.style.color = '#0f172a'; e.currentTarget.style.borderColor = i === 1 ? '#fbbf24' : '#ffffff'; }}
-                  onMouseLeave={e => { e.currentTarget.style.background = i === 1 ? '#facc15' : 'transparent'; e.currentTarget.style.color = i === 1 ? '#0f172a' : '#ffffff'; e.currentTarget.style.borderColor = i === 1 ? '#facc15' : 'rgba(255,255,255,0.2)'; }}
+                  onMouseEnter={e => { e.currentTarget.style.background = i === 1 ? '#93c5fd' : '#ffffff'; e.currentTarget.style.color = '#0f172a'; e.currentTarget.style.borderColor = i === 1 ? '#93c5fd' : '#ffffff'; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = i === 1 ? '#ffffff' : 'transparent'; e.currentTarget.style.color = i === 1 ? '#0f172a' : '#ffffff'; e.currentTarget.style.borderColor = i === 1 ? '#ffffff' : 'rgba(255,255,255,0.2)'; }}
                 >
                   Pay with eSewa
                 </button>

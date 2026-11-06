@@ -69,11 +69,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 <Link href="/" className="block mb-0.5">
                   <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.5rem', fontWeight: 700, letterSpacing: '0.05em', color: 'var(--text-main, #ffffff)' }}>MONSTER GYM</span>
                 </Link>
-                <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.6rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: '#facc15', fontWeight: 700 }}>Admin</span>
+                <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.6rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: '#93c5fd' }}>Admin</span>
               </div>
             )}
             {isCollapsed && (
-              <Link href="/" className="mx-auto block text-[#facc15] font-bold text-xl">M</Link>
+              <Link href="/" className="mx-auto block text-[#93c5fd] font-bold text-xl">M</Link>
             )}
             
             {/* Collapse Toggle */}

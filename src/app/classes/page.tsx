@@ -40,8 +40,8 @@ function ClassesContent() {
       <section className="pt-40 pb-16 px-8 bg-[#0f172a] border-b border-white/5">
         <div className="max-w-[1000px] mx-auto text-center">
           <div className="mb-6 flex flex-col items-center gap-4">
-             <div className="w-8 h-1 bg-[#facc15]"></div>
-             <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.25em', color: '#facc15', textTransform: 'uppercase' }}>Train On Your Terms</span>
+             <div className="w-8 h-1 bg-[#93c5fd]"></div>
+             <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.25em', color: '#93c5fd', textTransform: 'uppercase' }}>Train On Your Terms</span>
           </div>
           <h1 style={{ fontFamily: "'Oswald', sans-serif", fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 700, lineHeight: 1.1, textTransform: 'uppercase', marginBottom: '1.5rem', color: '#ffffff' }}>
             Class Schedule

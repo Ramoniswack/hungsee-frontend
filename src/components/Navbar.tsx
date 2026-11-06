@@ -80,8 +80,8 @@ export default function Navbar() {
           {!isLoggedIn ? (
             <Link
               href="/register"
-              style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#0f172a', background: '#facc15', padding: '0.8rem 1.8rem', border: 'none', cursor: 'pointer', transition: 'all 0.3s' }}
-              className="hover:bg-[#fbbf24] shadow-md shadow-yellow-500/20 rounded"
+              style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#0f172a', background: '#ffffff', padding: '0.8rem 1.8rem', border: 'none', cursor: 'pointer', transition: 'all 0.3s' }}
+              className="hover:bg-[#93c5fd] rounded"
             >
               Join Now
             </Link>
@@ -118,7 +118,7 @@ export default function Navbar() {
             <Link
               href="/register"
               onClick={() => setMenuOpen(false)}
-              style={{ fontFamily: "'Inter', sans-serif", fontSize: '1rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#0f172a', background: '#facc15', padding: '1rem', textAlign: 'center', marginTop: '1rem' }} className="rounded shadow-md shadow-yellow-500/20 font-bold"
+              style={{ fontFamily: "'Inter', sans-serif", fontSize: '1rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#0f172a', background: '#ffffff', padding: '1rem', textAlign: 'center', marginTop: '1rem' }}
             >
               Join Now
             </Link>

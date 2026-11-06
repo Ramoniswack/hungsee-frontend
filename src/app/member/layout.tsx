@@ -29,7 +29,7 @@ export default function MemberLayout({ children }: { children: React.ReactNode }
           <Link href="/member/dashboard" className="flex items-center gap-3">
             <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.4rem', fontWeight: 700, letterSpacing: '0.05em', color: 'var(--text-main, #ffffff)' }}>MONSTER GYM</span>
             <span style={{ width: '1px', height: '24px', background: 'rgba(255,255,255,0.1)' }}></span>
-            <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#facc15', fontWeight: 700 }}>Member Portal</span>
+            <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#93c5fd' }}>Member Portal</span>
           </Link>
 
           {/* Desktop Links */}
